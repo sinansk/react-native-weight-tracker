@@ -167,6 +167,6 @@ export const bodyGoals = [
   {
     sitution: "Extreme weight gain (4kg/month)",
     value: "Extreme weight gain",
-    value: "extremegain",
+    apiValue: "extremegain",
   },
 ];

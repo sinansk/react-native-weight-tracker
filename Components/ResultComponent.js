@@ -6,7 +6,7 @@ import i18n from "../locales/i18n";
 
 const ResultComponent = (props) => {
   const { status } = useSelector((state) => state.userInfo)
-  console.log(JSON.stringify(props.data))
+
   if (status === "loading") {
     return (
       <ActivityIndicator size="large" color="#0000ff" />

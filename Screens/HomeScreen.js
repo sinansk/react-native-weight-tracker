@@ -5,12 +5,13 @@ import ScreenTemplate from "./ScreenTemplate"
 import { useDispatch, useSelector } from "react-redux";
 import { setGender } from "../redux/userInfoSlice";
 import i18n from "../locales/i18n";
+import { StatusBar } from "expo-status-bar";
 
 const HomeScreen = () => {
   const dispatch = useDispatch()
   return (
     <ScreenTemplate>
-      <View className="w-full h-full ">
+      <View className="w-full h-full">
         <Pressable onPress={() => dispatch(setGender("female"))} >
           <CardComponent color="red">
             <Image
