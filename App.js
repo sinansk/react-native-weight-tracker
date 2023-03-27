@@ -23,9 +23,14 @@ function App() {
         initialRouteName="HomeScreen"
         screenOptions={{
           drawerPosition: "right",
-
           headerShown: true,
+          headerTransparent: true,
+          drawerStyle: {
+            backgroundColor: "rgb(240, 171, 252)",
 
+          },
+          drawerActiveBackgroundColor: "rgb(125, 211, 252)",
+          drawerActiveTintColor: "#fff",
           headerTitle: () => false,
           headerLeft: () => false,
           headerRight: () => <DrawerToggleButton />,
@@ -42,16 +47,9 @@ function App() {
 }
 
 export default () => {
-  <Provider store={store}>
-    <App />
-  </Provider>
+  return (
+    <Provider store={store}>
+      <App />
+    </Provider>
+  );
 }
-
-const styles = StyleSheet.create({
-  container: {
-    flex: 1,
-    backgroundColor: "#fff",
-    alignItems: "center",
-    justifyContent: "center",
-  },
-});

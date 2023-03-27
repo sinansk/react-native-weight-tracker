@@ -38,13 +38,13 @@ const BodyFatScreen = () => {
               {i18n.t('Measure your body')}!
             </Text>
             <Image
-              className="w-20 h-20 "
+              className="w-20 h-20"
               source={{
-                uri: "https://bodygoal.netlify.app/static/media/body-male.46ade1503b1bbe7c0dfd.png",
+                uri: "https://bodygoal.netlify.app/static/media/body-male.46ade1503b1bbe7c0dfd.png"
               }}
             />
-            <Text className="text-center">
-              {i18n.t(`Please measure your neck at widest point, your waist over belly button and your hip over largest point with a tape measure`)}.
+            <Text className="">
+              {i18n.t('Please measure your neck at widest point, your waist over belly button and your hip over largest point with a tape measure.')}
             </Text>
           </>
         }
@@ -53,12 +53,12 @@ const BodyFatScreen = () => {
         }
       />
       <CardComponent color="blue" styleProps={` flex-wrap `}>
-        <View className="w-1/2 ">
+        <View className="w-1/2">
           <SelectInput options={ages} label="Age" name="age" />
           <SelectInput options={heights} label="Height" name="height" />
           <SelectInput options={weights} label="Weight" name="weight" />
         </View>
-        <View className="w-1/2 ">
+        <View className="w-1/2">
           <SelectInput options={neck} label="Neck" name="neck" />
           <SelectInput options={waist} label="Waist" name="waist" />
           <SelectInput options={hip} label="Hip" name="hip" />

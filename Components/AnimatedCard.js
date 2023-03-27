@@ -6,7 +6,7 @@ const AnimatedCard = (props) => {
     const flipAnimation = useRef(new Animated.Value(0)).current;
 
     const flipCard = () => {
-        if (props.cardBackContent !== null) {
+        if (props.cardBackContent) {
             setIsFlipped(!isFlipped);
             Animated.timing(flipAnimation, {
                 toValue: isFlipped ? 1 : 0,
@@ -65,10 +65,9 @@ const AnimatedCard = (props) => {
     };
 
     return (
-        <View className={`${props.styleProps
-            } mx-4 mb-2 cursor-pointer flex-col h-60  `}>
+        <View className={"mx-4 mb-2 cursor-pointer flex-col h-60"}>
 
-            <Animated.View style={[styles.card, frontAnimatedStyle]} className={` rounded-xl border-2 p-4  ${props.color === "red"
+            <Animated.View style={[styles.card, frontAnimatedStyle]} className={`rounded-xl border-2 p-4  ${props.color === "red"
                 ? `border-rose-400 bg-rose-100 text-rose-300`
                 : `border-cyan-400 bg-cyan-100 text-cyan-300 `
                 } `}>

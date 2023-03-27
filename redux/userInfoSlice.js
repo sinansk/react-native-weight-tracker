@@ -1,7 +1,7 @@
 import { createSlice } from "@reduxjs/toolkit";
 import { calculateMeasurements } from "../utils/calculateMeasurements";
 import { fetchIdealWeight, fetchBodyFat, fetchCalorieNeed } from "./userInfoThunk";
-
+import produce from "immer";
 
 const userInfoSlice = createSlice({
     name: "userInfo",
@@ -19,7 +19,7 @@ const userInfoSlice = createSlice({
         bmi: "",
         bodyFat: null,
         calorieNeed: null,
-        calorieNeedByBodyGoal: "",
+        calorieNeedByBodyGoal: null,
         neck: 34,
         shoulder: 112,
         chest: 95,
@@ -42,7 +42,6 @@ const userInfoSlice = createSlice({
         },
         setIdealMeasurements: (state) => {
             state.idealMeasurements = calculateMeasurements(wrist = state.wrist, gender = state.gender)
-            console.log("idealMeasurements", state.idealMeasurements)
         },
         setGender: (state, action) => {
             state.gender = action.payload
@@ -89,7 +88,11 @@ const userInfoSlice = createSlice({
             })
             .addCase(fetchBodyFat.fulfilled, (state, action) => {
                 state.status = "succeeded";
-                state.bodyFat = action.payload;
+                //i18n-js package not translating U.S. word somewhat, so I am deleting it.
+                state.bodyFat = produce(action.payload, draftState => {
+                    draftState['Body Fat (Navy Method)'] = draftState['Body Fat (U.S. Navy Method)'];
+                    delete draftState['Body Fat (U.S. Navy Method)'];
+                });
             })
             .addCase(fetchBodyFat.rejected, (state, action) => {
                 state.status = "failed";
@@ -100,7 +103,7 @@ const userInfoSlice = createSlice({
             })
             .addCase(fetchCalorieNeed.fulfilled, (state, action) => {
                 state.status = "succeeded";
-                state.calorieNeed = action.payload;
+                state.calorieNeed = action.payload;   //bc of api data structure things..
                 state.calorieNeedByBodyGoal = state.calorieNeed["goals"]?.[state.bodyGoal]["calory"] ? state.calorieNeed["goals"]?.[state.bodyGoal]["calory"].toFixed(0)
                     + ` kcal` : state.calorieNeed["goals"]?.[state.bodyGoal].toFixed(0) + ` kcal`
             })

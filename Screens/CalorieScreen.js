@@ -29,7 +29,7 @@ const CalorieScreen = () => {
           <>
             <Text className="font-semibold capitalize xl:text-2xl">{i18n.t("Set your body goal")}!</Text>
             <Image
-              className="w-20 h-20 "
+              className="w-20 h-20"
               source={{
                 uri: "https://bodygoal.netlify.app/static/media/goal-female.ce284a10d38a0cde526b.png",
               }}
@@ -43,7 +43,7 @@ const CalorieScreen = () => {
         cardBackContent={calorieNeedByBodyGoal &&
           <>
             <ResultComponent data={calorieNeedByBodyGoal} message="Your daily calorie need for your goal" />
-            <SelectInput styles={styles.resultPageInput} options={bodyGoals} label="My goal is" name="bodyGoal" />
+            <SelectInput options={bodyGoals} label="My goal is" name="bodyGoal" />
             <Text className="mt-1 text-xs">({i18n.t('You need to recalculate if you change your body goal')})</Text>
           </>
         }

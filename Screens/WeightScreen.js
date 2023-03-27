@@ -15,7 +15,7 @@ const WeightScreen = () => {
   const dispatch = useDispatch();
 
   const idealWeightRange = useSelector((state) => state.userInfo.idealWeightRange)
-  console.log(idealWeightRange)
+  console.log(idealWeightRange);
   return (
     <ScreenTemplate>
       <AnimatedCard color="red"

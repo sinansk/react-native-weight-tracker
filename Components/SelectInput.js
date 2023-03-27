@@ -19,7 +19,7 @@ const SelectInput = (props) => {
   }, [selectedValue]);
   return (
     <View className={`-mb-1 flex w-full pr-2`}>
-      <Text className="-mb-3 font-medium text-black-500">
+      <Text className="-mb-3 font-medium text-slate-800">
         {i18n.t(props.label)}
       </Text>
       <Picker
