@@ -14,7 +14,7 @@ const translations = {
 const i18n = new I18n(translations);
 // Set the locale once at the beginning of your app.
 i18n.locale = getLocales()[0].languageCode;
-i18n.locale = 'tr'
+// i18n.locale = 'en'
 
 // When a value is missing from a language it'll fall back to another language with the key present.
 i18n.enableFallback = true;

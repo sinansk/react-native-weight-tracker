@@ -34,7 +34,7 @@ const CalorieScreen = () => {
                 uri: "https://bodygoal.netlify.app/static/media/goal-female.ce284a10d38a0cde526b.png",
               }}
             />
-            <Text className="text-center capitalize">
+            <Text className="mb-2 text-center capitalize">
               {i18n.t("Please set your body goal and we will calculate your daily calorie need")}
             </Text>
             <SelectInput options={bodyGoals} label="My goal is" name="bodyGoal" />

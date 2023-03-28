@@ -18,12 +18,13 @@ const SelectInput = (props) => {
     console.log("selected value changed:", selectedValue);
   }, [selectedValue]);
   return (
-    <View className={`-mb-1 flex w-full pr-2`}>
+    <View className={`-mb-1 flex w-full pr-2 `}>
       <Text className="-mb-3 font-medium text-slate-800">
         {i18n.t(props.label)}
       </Text>
       <Picker
-        selectedValue={selectedValue ?? props.options[0]}
+
+        selectedValue={selectedValue ? selectedValue : props.options[0].value ?? props.options[0]}
         onValueChange={(itemValue, itemIndex) =>
           dispatch(setInput({ name: props.name, value: itemValue }))
         }
