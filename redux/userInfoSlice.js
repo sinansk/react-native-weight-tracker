@@ -88,9 +88,9 @@ const userInfoSlice = createSlice({
             })
             .addCase(fetchBodyFat.fulfilled, (state, action) => {
                 state.status = "succeeded";
-                //i18n-js package not translating U.S. word somewhat, so I am deleting it.
+                //i18n-js package not translating "." somewhat, so I am deleting it.
                 state.bodyFat = produce(action.payload, draftState => {
-                    draftState['Body Fat (Navy Method)'] = draftState['Body Fat (U.S. Navy Method)'];
+                    draftState['Body Fat (US Navy Method)'] = draftState['Body Fat (U.S. Navy Method)'];
                     delete draftState['Body Fat (U.S. Navy Method)'];
                 });
             })

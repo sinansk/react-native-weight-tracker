@@ -44,7 +44,7 @@ const BodyFatScreen = () => {
               }}
             />
             <Text className="">
-              {i18n.t('Please measure your neck at widest point, your waist over belly button and your hip over largest point with a tape measure.')}
+              {i18n.t('Please measure your neck at widest point, your waist over belly button and your hip over largest point with a tape measure')}
             </Text>
           </>
         }

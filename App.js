@@ -13,6 +13,7 @@ import MeasurementScreen from "./Screens/MeasurementScreen";
 import HomeScreen from "./Screens/HomeScreen";
 import { Provider } from "react-redux";
 import { store } from "./redux/store";
+import i18n from "./locales/i18n";
 const Drawer = createDrawerNavigator();
 function App() {
 
@@ -36,11 +37,11 @@ function App() {
           headerRight: () => <DrawerToggleButton />,
         }}
       >
-        <Drawer.Screen name="HomeScreen" component={HomeScreen} />
-        <Drawer.Screen name="WeightScreen" component={WeightScreen} />
-        <Drawer.Screen name="BodyFatScreen" component={BodyFatScreen} />
-        <Drawer.Screen name="CalorieScreen" component={CalorieScreen} />
-        <Drawer.Screen name="MeasurementScreen" component={MeasurementScreen} />
+        <Drawer.Screen name={i18n.t("Select Gender")} component={HomeScreen} />
+        <Drawer.Screen name={i18n.t("Ideal Weight")} component={WeightScreen} />
+        <Drawer.Screen name={i18n.t("Body Fat")} component={BodyFatScreen} />
+        <Drawer.Screen name={i18n.t("Daily Calorie")} component={CalorieScreen} />
+        <Drawer.Screen name={i18n.t("Ideal Measurements")} component={MeasurementScreen} />
       </Drawer.Navigator>
     </NavigationContainer>
   );
