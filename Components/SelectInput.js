@@ -33,7 +33,7 @@ const SelectInput = (props) => {
           <Picker.Item
             key={index}
             label={
-              option.sitution ? i18n.t(option.sitution) : option.toString()
+              option.status ? i18n.t(option.status) : option.toString()
             }
             value={option.value ?? option}
           />

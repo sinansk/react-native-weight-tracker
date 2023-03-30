@@ -2,6 +2,7 @@ import { createSlice } from "@reduxjs/toolkit";
 import { calculateMeasurements } from "../utils/calculateMeasurements";
 import { fetchIdealWeight, fetchBodyFat, fetchCalorieNeed } from "./userInfoThunk";
 import produce from "immer";
+import i18n from "../locales/i18n";
 
 const userInfoSlice = createSlice({
     name: "userInfo",
@@ -16,6 +17,7 @@ const userInfoSlice = createSlice({
         activityLevel: "level_1",
         idealWeight: null,
         idealWeightRange: null,
+        idealWeightStatus: null,
         bmi: "",
         bodyFat: null,
         calorieNeed: null,
@@ -72,6 +74,11 @@ const userInfoSlice = createSlice({
                     );
                 }
                 state.idealWeightRange = state.idealWeight?.[0] + ` - ` + state.idealWeight[3]
+                if (state.weight < state.idealWeight[0]) {
+                    state.idealWeightStatus = i18n.t(`You need to gain {{dif}} kg`, { dif: state.idealWeight[0] - state.weight })
+                } else if (state.weight > state.idealWeight[3]) {
+                    state.idealWeightStatus = i18n.t(`You need to loss {{dif}} kg`, { dif: state.weight - state.idealWeight[3] })
+                } else state.idealWeightStatus = i18n.t("Your weight is ideal")
                 state.bmi = (
                     (state.weight /
                         (state.height * state.height)) *

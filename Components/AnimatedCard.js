@@ -4,7 +4,7 @@ import React, { useState, useEffect, useRef } from "react";
 const AnimatedCard = (props) => {
     const [isFlipped, setIsFlipped] = useState(false);
     const flipAnimation = useRef(new Animated.Value(0)).current;
-    console.log(props.cardBackContent)
+
     const flipCard = () => {
         if (props.cardBackContent) {
             setIsFlipped(!isFlipped);

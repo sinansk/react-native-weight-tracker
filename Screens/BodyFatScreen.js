@@ -3,14 +3,8 @@ import React from "react";
 import CardComponent from "../Components/CardComponent";
 import SelectInput from "../Components/SelectInput";
 import {
-  bodyTypes,
   waist,
   neck,
-  shoulder,
-  chest,
-  arm,
-  thigh,
-  calve,
   hip,
   ages,
   heights,
@@ -43,8 +37,8 @@ const BodyFatScreen = () => {
                 uri: "https://bodygoal.netlify.app/static/media/body-male.46ade1503b1bbe7c0dfd.png"
               }}
             />
-            <Text className="">
-              {i18n.t('Please measure your neck at widest point, your waist over belly button and your hip over largest point with a tape measure')}
+            <Text className="text-center">
+              {i18n.t('Please measure your neck at widest point, your waist over belly button and your hip over largest point with a tape measure so that we can calculate your body fat ratio')}
             </Text>
           </>
         }

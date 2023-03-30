@@ -20,7 +20,7 @@ const ResultComponent = (props) => {
         {Object.entries(props.data).map(([key, value]) => (
           <View style={styles.row} key={key}>
             <Text style={styles.key}>{i18n.t(key)}</Text>
-            <Text style={styles.value}>{value}</Text>
+            <Text style={styles.value}>{typeof value === "string" ? i18n.t(value) : value}</Text>
           </View>
         ))}
       </SafeAreaView>
@@ -48,8 +48,8 @@ const styles = StyleSheet.create({
     flex: 1,
     flexDirection: 'row',
     borderBottomWidth: 0.3,
-    borderBottomColor: '#ddd',
-    alignItems: 'flex-start',
+    borderBottomColor: '#fda4af',
+    alignItems: 'center',
     justifyContent: 'space-between',
     width: '100%',
 

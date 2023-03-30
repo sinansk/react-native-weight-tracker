@@ -10,10 +10,12 @@ import WeightScreen from "./Screens/WeightScreen";
 import BodyFatScreen from "./Screens/BodyFatScreen";
 import CalorieScreen from "./Screens/CalorieScreen";
 import MeasurementScreen from "./Screens/MeasurementScreen";
-import HomeScreen from "./Screens/HomeScreen";
+import GenderScreen from "./Screens/GenderScreen";
+import LandingScreen from "./Screens/LandingScreen";
 import { Provider } from "react-redux";
 import { store } from "./redux/store";
 import i18n from "./locales/i18n";
+
 const Drawer = createDrawerNavigator();
 function App() {
 
@@ -21,7 +23,7 @@ function App() {
     <NavigationContainer>
       <Drawer.Navigator
         useLegacyImplementation
-        initialRouteName="HomeScreen"
+        initialRouteName="LandingScreen"
         screenOptions={{
           drawerPosition: "right",
           headerShown: true,
@@ -30,18 +32,20 @@ function App() {
             backgroundColor: "rgb(240, 171, 252)",
 
           },
+          headerTitle: true,
           drawerActiveBackgroundColor: "rgb(125, 211, 252)",
           drawerActiveTintColor: "#fff",
-          headerTitle: () => false,
+
           headerLeft: () => false,
           headerRight: () => <DrawerToggleButton />,
         }}
       >
-        <Drawer.Screen name={i18n.t("Select Gender")} component={HomeScreen} />
-        <Drawer.Screen name={i18n.t("Ideal Weight")} component={WeightScreen} />
-        <Drawer.Screen name={i18n.t("Body Fat")} component={BodyFatScreen} />
-        <Drawer.Screen name={i18n.t("Daily Calorie")} component={CalorieScreen} />
-        <Drawer.Screen name={i18n.t("Ideal Measurements")} component={MeasurementScreen} />
+        <Drawer.Screen name={i18n.t("Select Gender")} component={LandingScreen} options={{ headerShown: false }} />
+        {/* <Drawer.Screen name={i18n.t("Select Gender")} component={GenderScreen} /> */}
+        <Drawer.Screen name={i18n.t("Ideal Weight Calculator")} component={WeightScreen} />
+        <Drawer.Screen name={i18n.t("Body Fat Calculator")} component={BodyFatScreen} />
+        <Drawer.Screen name={i18n.t("Daily Calorie Calculator")} component={CalorieScreen} />
+        <Drawer.Screen name={i18n.t("Ideal Measurements Calculator")} component={MeasurementScreen} />
       </Drawer.Navigator>
     </NavigationContainer>
   );

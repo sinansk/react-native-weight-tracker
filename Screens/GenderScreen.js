@@ -7,12 +7,18 @@ import { setGender } from "../redux/userInfoSlice";
 import i18n from "../locales/i18n";
 import { StatusBar } from "expo-status-bar";
 
-const HomeScreen = () => {
+const HomeScreen = ({ navigation }) => {
   const dispatch = useDispatch()
+  const handlePress = (gender) => {
+    navigation.navigate(i18n.t("Ideal Weight Calculator"))
+    dispatch(setGender(gender))
+  }
+
+
   return (
     <ScreenTemplate>
       <View className="w-full h-full">
-        <Pressable onPress={() => dispatch(setGender("female"))} >
+        <Pressable onPress={() => handlePress("female")} >
           <CardComponent color="red">
             <Image
               className="w-40 h-40 "
@@ -23,7 +29,7 @@ const HomeScreen = () => {
             <Text className="mt-1 text-xl font-semibold text-rose-400">{i18n.t("Female")}</Text>
           </CardComponent>
         </Pressable>
-        <Pressable onPress={() => dispatch(setGender("male"))} >
+        <Pressable onPress={() => handlePress("male")} >
           <CardComponent color="blue">
             <Image
               className="w-40 h-40 "
