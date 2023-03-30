@@ -15,7 +15,9 @@ const WeightScreen = () => {
   const dispatch = useDispatch();
 
   const idealWeightRange = useSelector((state) => state.userInfo.idealWeightRange)
-  console.log(idealWeightRange);
+  const { idealWeightStatus } = useSelector((state) => state.userInfo)
+  const { bodyType } = useSelector((state) => state.userInfo)
+
   return (
     <ScreenTemplate>
       <AnimatedCard color="red"
@@ -34,7 +36,12 @@ const WeightScreen = () => {
           </>
         }
         cardBackContent={idealWeightRange &&
-          <ResultComponent data={idealWeightRange} name="Weight" message="Your ideal weight range is" />
+          <>
+            <Text className="mb-5 font-semibold text-fuchsia-700">{i18n.t("Your body type is {{bodyType}}", { bodyType: i18n.t(bodyType) })}</Text>
+            <ResultComponent data={idealWeightRange} name="Weight" message="Your ideal weight range is" />
+            <Text className="mt-5 font-semibold text-fuchsia-700">{idealWeightStatus}</Text>
+
+          </>
         }
       />
       <CardComponent color="blue" >

@@ -93,79 +93,79 @@ export const wrist = [
 
 export const bodyTypes = [
   {
-    sitution: "Overlapping",
+    status: "Overlapping",
     value: "Ectomorph",
   },
   {
-    sitution: "Just touching",
+    status: "Just touching",
     value: "Mesomorph",
   },
   {
-    sitution: "Not touching, there is gap between",
+    status: "Not touching, there is gap between",
     value: "Endomorph",
   },
 ];
 
 export const activityLevels = [
   {
-    sitution: "Sedentary: little or no exercise",
+    status: "Sedentary: little or no exercise",
     value: "level_1",
   },
   {
-    sitution: "Exercise 1-3 times/week",
+    status: "Exercise 1-3 times/week",
     value: "level_2",
   },
   {
-    sitution: "Exercise 4-5 times/week",
+    status: "Exercise 4-5 times/week",
     value: "level_3",
   },
   {
-    sitution: "Daily exercise or intense exercise 3-4 times/week",
+    status: "Daily exercise or intense exercise 3-4 times/week",
     value: "level_4",
   },
   {
-    sitution: "Intense exercise 6-7 times/week",
+    status: "Intense exercise 6-7 times/week",
     value: "level_5",
   },
   {
-    sitution: "Very intense exercise daily, or physical job",
+    status: "Very intense exercise daily, or physical job",
     value: "level_6",
   },
 ];
 
 export const bodyGoals = [
   {
-    sitution: "Maintain weight",
+    status: "Maintain weight",
     value: "maintain weight",
     apiValue: "maintain",
   },
   {
-    sitution: "Mild weight loss (1kg/month)",
+    status: "Mild weight loss (1kg/month)",
     value: "Mild weight loss",
     apiValue: "mildlose",
   },
   {
-    sitution: "Weight loss (2kg/month)",
+    status: "Weight loss (2kg/month)",
     value: "Weight loss",
     apiValue: "weightlose",
   },
   {
-    sitution: "Extreme weight loss (4kg/month)",
+    status: "Extreme weight loss (4kg/month)",
     value: "Extreme weight loss",
     apiValue: "extremelose",
   },
   {
-    sitution: "Mild weight gain (1kg/month)",
+    status: "Mild weight gain (1kg/month)",
     value: "Mild weight gain",
     apiValue: "mildgain",
   },
   {
-    sitution: "Weight gain (2kg/month)",
+    status: "Weight gain (2kg/month)",
     value: "Weight gain",
     apiValue: "weightgain",
   },
   {
-    sitution: "Extreme weight gain (4kg/month)",
+    status: "Extreme weight gain (4kg/month)",
     value: "Extreme weight gain",
     apiValue: "extremegain",
   },
