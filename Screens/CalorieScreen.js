@@ -1,9 +1,8 @@
-import { StyleSheet, Text, View, Image } from "react-native";
+import { StyleSheet, Text, Image } from "react-native";
 import React from "react";
 import CardComponent from "../Components/CardComponent";
 import SelectInput from "../Components/SelectInput";
 import {
-  bodyTypes,
   heights,
   weights,
   activityLevels,
@@ -60,9 +59,3 @@ const CalorieScreen = () => {
 };
 
 export default CalorieScreen;
-
-const styles = StyleSheet.create({
-  resultPageInput: {
-    color: "red"
-  }
-});

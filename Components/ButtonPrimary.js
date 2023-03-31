@@ -1,4 +1,4 @@
-import { StyleSheet, Text, View, ActivityIndicator } from "react-native";
+import { StyleSheet, Text, ActivityIndicator } from "react-native";
 import React from "react";
 import { TouchableOpacity } from "react-native-gesture-handler";
 import i18n from "../locales/i18n";

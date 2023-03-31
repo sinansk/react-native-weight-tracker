@@ -1,4 +1,4 @@
-import { StyleSheet, Text, View, Image } from "react-native";
+import { StyleSheet, Text, Image } from "react-native";
 import React from "react";
 import CardComponent from "../Components/CardComponent";
 import SelectInput from "../Components/SelectInput";
@@ -13,7 +13,6 @@ import i18n from "../locales/i18n";
 
 const WeightScreen = () => {
   const dispatch = useDispatch();
-
   const idealWeightRange = useSelector((state) => state.userInfo.idealWeightRange)
   const { idealWeightStatus } = useSelector((state) => state.userInfo)
   const { bodyType } = useSelector((state) => state.userInfo)
@@ -40,7 +39,6 @@ const WeightScreen = () => {
             <Text className="mb-5 font-semibold text-fuchsia-700">{i18n.t("Your body type is {{bodyType}}", { bodyType: i18n.t(bodyType) })}</Text>
             <ResultComponent data={idealWeightRange} name="Weight" message="Your ideal weight range is" />
             <Text className="mt-5 font-semibold text-fuchsia-700">{idealWeightStatus}</Text>
-
           </>
         }
       />

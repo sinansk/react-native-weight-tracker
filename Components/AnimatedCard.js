@@ -1,4 +1,4 @@
-import { Text, View, Animated, StyleSheet, TouchableOpacity } from "react-native";
+import { View, Animated, StyleSheet, TouchableOpacity } from "react-native";
 import React, { useState, useEffect, useRef } from "react";
 
 const AnimatedCard = (props) => {

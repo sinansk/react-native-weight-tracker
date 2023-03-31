@@ -1,7 +1,6 @@
 import { StyleSheet, Text, View, TouchableOpacity } from 'react-native'
 import React, { useEffect } from 'react'
 import i18n from '../locales/i18n'
-import ScreenTemplate from './ScreenTemplate'
 import { FontAwesome, FontAwesome5, MaterialIcons, MaterialCommunityIcons } from '@expo/vector-icons';
 import { useDispatch, useSelector } from 'react-redux';
 import { setGender } from '../redux/userInfoSlice';
