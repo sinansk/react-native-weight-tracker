@@ -22,7 +22,7 @@ import i18n from "../locales/i18n";
 const BodyFatScreen = () => {
   const dispatch = useDispatch();
   const { bodyFat } = useSelector((state) => state.userInfo)
-
+  const { gender } = useSelector((state) => state.userInfo)
   return (
     <ScreenTemplate>
       <AnimatedCard color="red"
@@ -31,12 +31,22 @@ const BodyFatScreen = () => {
             <Text className="mb-4 font-semibold capitalize xl:text-2xl">
               {i18n.t('Measure your body')}!
             </Text>
-            <Image
-              className="w-20 h-20"
-              source={{
-                uri: "https://bodygoal.netlify.app/static/media/body-male.46ade1503b1bbe7c0dfd.png"
-              }}
-            />
+            {gender === "male" ? (
+              <Image
+                className="w-20 h-20"
+                source={{
+                  uri: "https://bodygoal.netlify.app/static/media/body-male.46ade1503b1bbe7c0dfd.png"
+                }}
+              />
+            ) : (
+              <Image
+                className="w-20 h-20"
+                source={{
+                  uri: "https://bodygoal.netlify.app/static/media/body-female.5459163da99eb6716e1f.png"
+                }}
+              />
+            )
+            }
             <Text className="text-center">
               {i18n.t('Please measure your neck at widest point, your waist over belly button and your hip over largest point with a tape measure so that we can calculate your body fat ratio')}
             </Text>

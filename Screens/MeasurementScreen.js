@@ -1,4 +1,4 @@
-import { StyleSheet, Text, View, Image, Pressable } from "react-native";
+import { StyleSheet, Text, Image } from "react-native";
 import React from "react";
 import CardComponent from "../Components/CardComponent";
 import SelectInput from "../Components/SelectInput";
@@ -14,7 +14,7 @@ import { setIdealMeasurements } from "../redux/userInfoSlice";
 const MeasurementScreen = () => {
   const { idealMeasurements } = useSelector((state) => state.userInfo)
   const dispatch = useDispatch()
-  console.log(idealMeasurements);
+
   return (
     <ScreenTemplate>
       <AnimatedCard color="red"

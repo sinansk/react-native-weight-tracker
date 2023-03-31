@@ -1,7 +1,7 @@
 {
   "expo": {
     "name": "react-weight-tracker-native",
-    "slug": "react-weight-tracker-native",
+    "slug": "ideal-weight-and-ideal-measurements",
     "version": "1.0.0",
     "orientation": "portrait",
     "icon": "./assets/icon.png",
@@ -21,13 +21,20 @@
       "adaptiveIcon": {
         "foregroundImage": "./assets/adaptive-icon.png",
         "backgroundColor": "#ffffff"
-      }
+      },
+      "package": "com.sinansk.idealweightandidealmeasurements"
     },
     "web": {
       "favicon": "./assets/favicon.png"
     },
     "plugins": [
       "expo-localization"
-    ]
+    ],
+    "extra": {
+      "eas": {
+        "projectId": "67877ce0-639d-4cb4-a994-ae734751f86e"
+      }
+    },
+    "owner": "sinansk"
   }
 }
