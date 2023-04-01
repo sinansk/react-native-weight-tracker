@@ -1,7 +1,7 @@
 {
   "expo": {
-    "name": "Ideal Weight & Ideal Measurements",
-    "slug": "ideal-weight-and-ideal-measurements",
+    "name": "Bodygoal",
+    "slug": "bodygoal",
     "version": "1.0.0",
     "orientation": "portrait",
     "icon": "./assets/icon.png",
@@ -22,7 +22,7 @@
         "foregroundImage": "./assets/adaptive-icon.png",
         "backgroundColor": "#ffffff"
       },
-      "package": "com.sinansk.idealweightandidealmeasurements"
+      "package": "com.sinansk.bodygoal"
     },
     "web": {
       "favicon": "./assets/favicon.png"
@@ -32,7 +32,7 @@
     ],
     "extra": {
       "eas": {
-        "projectId": "67877ce0-639d-4cb4-a994-ae734751f86e"
+        "projectId": "7f8d6995-dacb-4468-ae43-014943ad7ba0"
       }
     },
     "owner": "sinansk"
