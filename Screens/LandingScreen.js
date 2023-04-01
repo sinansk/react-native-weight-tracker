@@ -5,7 +5,11 @@ import { FontAwesome, FontAwesome5, MaterialIcons, MaterialCommunityIcons } from
 import { useDispatch, useSelector } from 'react-redux';
 import { setGender } from '../redux/userInfoSlice';
 import * as Network from 'expo-network';
+import { useRef } from 'react';
+
 const LandingScreen = ({ navigation }) => {
+
+    const modalRef = useRef(null);
     const dispatch = useDispatch()
     const { gender } = useSelector((state) => state.userInfo)
     const [network, setNetwork] = useState("")
@@ -27,11 +31,11 @@ const LandingScreen = ({ navigation }) => {
         checkNetwork()
     }, [])
 
-
     const handleGender = (selectedGender) => {
         dispatch(setGender(selectedGender))
     }
     const handleNavigate = (nextScreen) => {
+        checkNetwork();
         network &&
             navigation.navigate(nextScreen)
     }

@@ -6,8 +6,8 @@ const CardComponent = (props) => {
     <View
       className={`${props.styleProps
         } mx-4 mb-2 flex h-60 cursor-pointer flex-col items-center justify-center rounded-xl border-2 p-4  ${props.color === "red"
-          ? `border-rose-400 bg-rose-100 text-rose-300`
-          : `border-cyan-400 bg-cyan-100 text-cyan-300`
+          ? `border-fuchsia-400 bg-fuchsia-100 text-rose-300`
+          : `border-sky-400 bg-cyan-200/20 text-cyan-300`
         } `}
     >
       {props.children}
