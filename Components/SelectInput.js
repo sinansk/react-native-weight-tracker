@@ -1,7 +1,6 @@
 import { Text, View } from "react-native";
 import React, { useEffect } from "react";
 import { Picker } from "@react-native-picker/picker";
-
 import { useDispatch, useSelector } from "react-redux";
 import { setInput, userInfoSelector } from "../redux/userInfoSlice";
 import i18n from "../locales/i18n";
@@ -19,7 +18,6 @@ const SelectInput = (props) => {
         {i18n.t(props.label)}
       </Text>
       <Picker
-
         selectedValue={selectedValue ? selectedValue : props.options[0].value ?? props.options[0]}
         onValueChange={(itemValue, itemIndex) =>
           dispatch(setInput({ name: props.name, value: itemValue }))

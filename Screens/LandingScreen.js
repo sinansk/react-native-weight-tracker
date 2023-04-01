@@ -5,10 +5,21 @@ import { FontAwesome, FontAwesome5, MaterialIcons, MaterialCommunityIcons } from
 import { useDispatch, useSelector } from 'react-redux';
 import { setGender } from '../redux/userInfoSlice';
 import * as Network from 'expo-network';
+import LanguageSelect from '../Components/LanguageSelect';
+import ModalComponent from '../Components/ModalComponent';
+import { languageInputs } from '../utils/languageInputs'
+import { useRef } from 'react';
+import SelectInput from '../Components/SelectInput';
+
 const LandingScreen = ({ navigation }) => {
+
+    const modalRef = useRef(null);
     const dispatch = useDispatch()
     const { gender } = useSelector((state) => state.userInfo)
     const [network, setNetwork] = useState("")
+    useEffect(() => {
+        console.log("landing", i18n.locale)
+    }, [i18n.locale])
 
     const checkNetwork = async () => {
         try {
@@ -27,20 +38,33 @@ const LandingScreen = ({ navigation }) => {
         checkNetwork()
     }, [])
 
-
     const handleGender = (selectedGender) => {
         dispatch(setGender(selectedGender))
     }
     const handleNavigate = (nextScreen) => {
+        checkNetwork();
         network &&
             navigation.navigate(nextScreen)
     }
 
+    const handleOkayBtn = () => {
+
+
+        modalRef.current.closeModal()
+
+    }
     return (
         <View className="flex-col items-center justify-center w-full h-full bg-slate-100">
             {network !== true &&
                 <Text className="mb-10 text-xs font-semibold text-center text-rose-700">{i18n.t("This app requires internet connection")}</Text>
             }
+            <TouchableOpacity className="mb-5 ml-auto mr-10" onPress={() => modalRef.current.openModal()}>
+                <FontAwesome name="gear" size={24} className="mr-2" />
+            </TouchableOpacity>
+            <ModalComponent ref={modalRef}>
+                <LanguageSelect />
+                <TouchableOpacity onPress={() => handleOkayBtn()}><Text>Okay</Text></TouchableOpacity>
+            </ModalComponent>
             <View className="flex-row items-center justify-center w-full gap-9 mb-9">
                 <TouchableOpacity onPress={() => handleGender("female")} className={`${gender === "female" && 'border-[0.3px] border-slate-500 rounded-xl bg-slate-50'} ' p-3`}>
                     <FontAwesome className="" name="female" size={gender === 'female' ? 68 : 60} color={gender === 'female' ? '#ec4899' : '#d6d3d1'} />
@@ -51,7 +75,7 @@ const LandingScreen = ({ navigation }) => {
             </View>
             <View className="flex-col items-center justify-center gap-1">
                 <View className="flex-row gap-2">
-                    <TouchableOpacity onPress={() => handleNavigate(i18n.t("Ideal Weight Calculator"))} className="flex items-center justify-center w-40 h-40 p-2 bg-sky-700 rounded-xl">
+                    <TouchableOpacity onPress={() => handleNavigate("Ideal Weight Calculator")} className="flex items-center justify-center w-40 h-40 p-2 bg-sky-700 rounded-xl">
                         <FontAwesome5 name="weight" size={58} color="white"></FontAwesome5>
                         <Text className="mt-2 font-semibold text-center text-white">{i18n.t("Ideal Weight Calculator")}</Text>
                     </TouchableOpacity>
