@@ -29,7 +29,7 @@ function App() {
           headerTransparent: true,
           contentStyle: { flex: 1 },
           drawerStyle: {
-            backgroundColor: "rgb(240, 171, 252)",
+            backgroundColor: "#c4b5fd",
 
           },
 

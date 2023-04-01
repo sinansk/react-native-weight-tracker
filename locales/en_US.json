@@ -1,5 +1,10 @@
 {    
     "This app requires internet connection": "This app requires internet connection",
+    "Select Language": "Select Language",
+    "English": "English",
+    "Turkish": "Turkish",
+    "German": "German",
+    "Spanish": "Spanish",
     "Calculate": "Calculate",
     "Select your gender": "Select your gender",
     "Select Gender": "Select Gender",

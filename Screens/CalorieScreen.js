@@ -8,7 +8,7 @@ import {
   activityLevels,
   bodyGoals,
   ages,
-} from "../data";
+} from "../utils/data";
 import ScreenTemplate from "./ScreenTemplate";
 import ButtonPrimary from "../Components/ButtonPrimary";
 import { useSelector, useDispatch } from "react-redux"

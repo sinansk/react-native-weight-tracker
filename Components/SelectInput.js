@@ -1,7 +1,6 @@
 import { Text, View } from "react-native";
 import React, { useEffect } from "react";
 import { Picker } from "@react-native-picker/picker";
-
 import { useDispatch, useSelector } from "react-redux";
 import { setInput, userInfoSelector } from "../redux/userInfoSlice";
 import i18n from "../locales/i18n";

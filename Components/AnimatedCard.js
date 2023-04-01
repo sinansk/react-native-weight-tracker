@@ -68,14 +68,14 @@ const AnimatedCard = (props) => {
     return (
         <View className={"mx-4 mb-2 cursor-pointer flex-col h-60"}>
             <Animated.View style={[styles.card, frontAnimatedStyle]} className={`rounded-xl border-2 p-4  ${props.color === "red"
-                ? `border-rose-400 bg-rose-100 text-rose-300`
-                : `border-cyan-400 bg-cyan-100 text-cyan-300 `
+                ? `border-fuchsia-400 bg-fuchsia-200/20 text-fuchsia-300`
+                : `border-sky-400 bg-cyan-200/30 text-cyan-300 `
                 } `}>
                 {renderFront()}
             </Animated.View>
             <Animated.View style={[styles.card, backAnimatedStyle]} className={` rounded-xl border-2 p-4  ${props.color === "red"
-                ? `border-rose-400 bg-rose-100 text-rose-300`
-                : `border-cyan-400 bg-cyan-100 text-cyan-300 `
+                ? `border-fuchsia-400 bg-fuchsia-200/20 text-fuchsia-300`
+                : `border-sky-400 bg-cyan-200/30 text-cyan-300 `
                 } `}>
                 {renderBack()}
             </Animated.View>

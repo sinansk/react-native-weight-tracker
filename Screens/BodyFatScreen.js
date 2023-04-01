@@ -9,7 +9,7 @@ import {
   ages,
   heights,
   weights,
-} from "../data";
+} from "../utils/data";
 import ButtonPrimary from "../Components/ButtonPrimary";
 import ScreenTemplate from "./ScreenTemplate";
 import { fetchBodyFat } from "../redux/userInfoThunk";

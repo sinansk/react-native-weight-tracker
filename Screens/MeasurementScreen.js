@@ -2,7 +2,7 @@ import { StyleSheet, Text, Image } from "react-native";
 import React from "react";
 import CardComponent from "../Components/CardComponent";
 import SelectInput from "../Components/SelectInput";
-import { wrist } from "../data";
+import { wrist } from "../utils/data";
 import ScreenTemplate from "./ScreenTemplate";
 import ButtonPrimary from "../Components/ButtonPrimary";
 import { useDispatch, useSelector } from "react-redux";
