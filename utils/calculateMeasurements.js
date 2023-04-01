@@ -8,7 +8,6 @@ export const calculateMeasurements = (wrist, gender) => {
     let thigh = Math.round(chest * 0.53);
     let calve = Math.round(chest * 0.34);
     let shoulder = Math.round(waist * 1.61);
-    console.log(gender)
 
     if (gender === "male") {
 
