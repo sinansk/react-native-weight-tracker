@@ -10,12 +10,19 @@ import BodyFatScreen from "./Screens/BodyFatScreen";
 import CalorieScreen from "./Screens/CalorieScreen";
 import MeasurementScreen from "./Screens/MeasurementScreen";
 import LandingScreen from "./Screens/LandingScreen";
-import { Provider } from "react-redux";
+import { Provider, useSelector } from "react-redux";
 import { store } from "./redux/store";
 import i18n from "./locales/i18n";
+import { useEffect } from "react";
 
 const Drawer = createDrawerNavigator();
 function App() {
+
+  const { language } = useSelector((state) => state.userInfo)
+  useEffect(() => {
+    i18n.locale = language
+    console.log("appjs-18n:", i18n.locale, "redux-lang:", language)
+  }, [language])
 
   return (
     <NavigationContainer>
@@ -41,7 +48,7 @@ function App() {
           headerRight: () => <DrawerToggleButton />,
         }}
       >
-        <Drawer.Screen name={i18n.t("Select Gender")} component={LandingScreen} options={{ headerShown: false }} />
+        <Drawer.Screen name={i18n.t("Select Gender")} component={LandingScreen} options={{ headerShown: true }} />
         <Drawer.Screen name={i18n.t("Ideal Weight Calculator")} component={WeightScreen} />
         <Drawer.Screen name={i18n.t("Body Fat Calculator")} component={BodyFatScreen} />
         <Drawer.Screen name={i18n.t("Daily Calorie Calculator")} component={CalorieScreen} />

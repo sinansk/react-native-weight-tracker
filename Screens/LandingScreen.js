@@ -3,11 +3,14 @@ import React, { useEffect, useState } from 'react'
 import i18n from '../locales/i18n'
 import { FontAwesome, FontAwesome5, MaterialIcons, MaterialCommunityIcons } from '@expo/vector-icons';
 import { useDispatch, useSelector } from 'react-redux';
-import { setGender } from '../redux/userInfoSlice';
+import { setGender, setLanguage } from '../redux/userInfoSlice';
 import * as Network from 'expo-network';
 import { useRef } from 'react';
 
 const LandingScreen = ({ navigation }) => {
+
+    const { language } = useSelector((state) => state.userInfo)
+    const [selectedLang, setSelectedLang] = useState(language)
 
     const modalRef = useRef(null);
     const dispatch = useDispatch()
@@ -39,9 +42,19 @@ const LandingScreen = ({ navigation }) => {
         network &&
             navigation.navigate(nextScreen)
     }
+    const handlePress = (lang) => {
+        setSelectedLang(lang)
+    }
 
+    useEffect(() => {
+        i18n.locale = selectedLang
+        dispatch(setLanguage(selectedLang))
+    }, [selectedLang])
     return (
         <View className="flex-col items-center justify-center w-full h-full bg-slate-100">
+            <TouchableOpacity className="w-16 h-5 mb-8 bg-fuchsia-700" onPress={() => handlePress("en")}><Text>en</Text></TouchableOpacity>
+            <TouchableOpacity className="w-16 h-5 mb-8 bg-fuchsia-700" onPress={() => handlePress("tr")}><Text>tr</Text></TouchableOpacity>
+            <TouchableOpacity className="w-16 h-5 mb-8 bg-fuchsia-700" onPress={() => handlePress("es")}><Text>es</Text></TouchableOpacity>
             {network !== true &&
                 <Text className="mb-10 text-xs font-semibold text-center text-rose-700">{i18n.t("This app requires internet connection")}</Text>
             }
