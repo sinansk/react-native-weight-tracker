@@ -7,6 +7,7 @@ import i18n from "../locales/i18n";
 const userInfoSlice = createSlice({
     name: "userInfo",
     initialState: {
+        language: i18n.locale,
         birthDay: "29.01.1993",
         gender: "male",
         height: 169,
@@ -38,6 +39,9 @@ const userInfoSlice = createSlice({
     },
     reducers: {
         reset: (state) => { },
+        setLanguage: (state, action) => {
+            state.language = action.payload
+        },
         setInput: (state, action) => {
             const { name, value } = action.payload;
             state[name] = value;
@@ -121,6 +125,6 @@ const userInfoSlice = createSlice({
     }
 });
 
-export const { setInput, setIdealMeasurements, setGender, reset } = userInfoSlice.actions;
+export const { setInput, setIdealMeasurements, setGender, reset, setLanguage } = userInfoSlice.actions;
 export const userInfoSelector = (state) => state.userInfo;
 export default userInfoSlice.reducer;
