@@ -10,8 +10,10 @@ import { fetchIdealWeight } from "../redux/userInfoThunk";
 import ResultComponent from "../Components/ResultComponent";
 import AnimatedCard from "../Components/AnimatedCard";
 import i18n from "../locales/i18n";
+import BannerAdComponent from "../Components/BannerAdComponent";
 
 const WeightScreen = () => {
+
   const dispatch = useDispatch();
   const idealWeightRange = useSelector((state) => state.userInfo.idealWeightRange)
   const { idealWeightStatus } = useSelector((state) => state.userInfo)
@@ -48,6 +50,7 @@ const WeightScreen = () => {
         <SelectInput options={weights} label="Weight" name="weight" />
       </CardComponent>
       <ButtonPrimary text="Calculate" onPress={() => dispatch(fetchIdealWeight())} />
+      <BannerAdComponent />
     </ScreenTemplate>
   );
 };

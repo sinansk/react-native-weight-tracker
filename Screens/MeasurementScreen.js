@@ -10,6 +10,8 @@ import ResultComponent from "../Components/ResultComponent";
 import AnimatedCard from "../Components/AnimatedCard";
 import i18n from "../locales/i18n";
 import { setIdealMeasurements } from "../redux/userInfoSlice";
+import BannerAdComponent from "../Components/BannerAdComponent";
+
 
 const MeasurementScreen = () => {
   const { idealMeasurements } = useSelector((state) => state.userInfo)
@@ -46,6 +48,7 @@ const MeasurementScreen = () => {
         <SelectInput options={wrist} label="Wrist Size" name="wrist" />
       </CardComponent>
       <ButtonPrimary text="Calculate" onPress={() => (dispatch(setIdealMeasurements()))} />
+      <BannerAdComponent />
     </ScreenTemplate>
   );
 };

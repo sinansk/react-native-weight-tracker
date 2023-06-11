@@ -16,6 +16,7 @@ import { fetchCalorieNeed } from "../redux/userInfoThunk";
 import ResultComponent from "../Components/ResultComponent";
 import AnimatedCard from "../Components/AnimatedCard";
 import i18n from "../locales/i18n";
+import BannerAdComponent from "../Components/BannerAdComponent";
 
 const CalorieScreen = () => {
   const dispatch = useDispatch();
@@ -54,6 +55,7 @@ const CalorieScreen = () => {
         <SelectInput options={activityLevels} label="Activity Level" name="activityLevel" />
       </CardComponent>
       <ButtonPrimary text="Calculate" onPress={() => dispatch(fetchCalorieNeed())} />
+      <BannerAdComponent />
     </ScreenTemplate>
   );
 };
