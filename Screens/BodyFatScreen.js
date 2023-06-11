@@ -17,7 +17,7 @@ import { useDispatch, useSelector } from "react-redux";
 import ResultComponent from "../Components/ResultComponent";
 import AnimatedCard from "../Components/AnimatedCard";
 import i18n from "../locales/i18n";
-
+import BannerAdComponent from "../Components/BannerAdComponent";
 
 const BodyFatScreen = () => {
   const dispatch = useDispatch();
@@ -69,6 +69,7 @@ const BodyFatScreen = () => {
         </View>
       </CardComponent>
       <ButtonPrimary text="Calculate" onPress={() => dispatch(fetchBodyFat())} />
+      <BannerAdComponent />
     </ScreenTemplate>
   );
 };
