@@ -46,9 +46,7 @@ const LandingScreen = ({ navigation }) => {
 
     return (
         <View className="flex-col items-center justify-center w-full h-full bg-slate-100">
-            {showNoConnectionMessage &&
-                <Text className="mb-10 text-xs font-semibold text-center text-rose-700">{i18n.t("This app requires internet connection")}</Text>
-            }
+            <Text className="mb-10 text-xs font-semibold text-center text-rose-700">{showNoConnectionMessage && i18n.t("This app requires internet connection")}</Text>
             <View className="absolute top-10 right-2">
                 <LanguageSelectButton />
             </View>
