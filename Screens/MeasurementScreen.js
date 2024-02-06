@@ -22,10 +22,10 @@ const MeasurementScreen = () => {
       <AnimatedCard color="red"
         cardFrontContent={
           <>
-            <Text className="mb-4 font-semibold text-center xl:text-2xl">
+            <Text className="mb-4 font-semibold text-center text-white xl:text-2xl">
               {i18n.t("Learn your ideal measurements")}!
             </Text>
-            <Text className="text-center">   {/*i18n-js package not trasnlating if you have "." end of sentence */}
+            <Text className="text-center text-white">   {/*i18n-js package not trasnlating if you have "." end of sentence */}
               {i18n.t("The calculation gives your ideal body measurements, which can be achieved by natural methods")} .{i18n.t("Various studies show that there is a correct correlation between wrist thickness and other body parts")}.{i18n.t("If you are doing sports, you can set these measures as the goals you can reach in your ideal weight and body fat ratio")}.
             </Text>
           </>
@@ -35,14 +35,14 @@ const MeasurementScreen = () => {
         }
       />
       <CardComponent color="blue">
-        <Text className="font-semibold xl:text-2xl">{i18n.t("Measure your wrist")}!</Text>
+        <Text className="font-semibold text-white xl:text-2xl">{i18n.t("Measure your wrist")}!</Text>
         <Image
           className="w-20 h-20"
           source={{
             uri: "https://bodygoal.netlify.app/static/media/wrist-male.4ea9ecb71b3f90e624aa.png",
           }}
         />
-        <Text className="text-center">
+        <Text className="text-center text-white">
           {i18n.t("Please measure your wrist circumference with a tape measure in the area you normally wear a watch")}.
         </Text>
         <SelectInput options={wrist} label="Wrist Size" name="wrist" />

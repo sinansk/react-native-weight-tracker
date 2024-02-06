@@ -27,14 +27,14 @@ const CalorieScreen = () => {
       <AnimatedCard color="red"
         cardFrontContent={
           <>
-            <Text className="font-semibold capitalize xl:text-2xl">{i18n.t("Set your body goal")}!</Text>
+            <Text className="font-semibold text-white capitalize xl:text-2xl">{i18n.t("Set your body goal")}!</Text>
             <Image
               className="w-20 h-20"
               source={{
                 uri: "https://bodygoal.netlify.app/static/media/goal-female.ce284a10d38a0cde526b.png",
               }}
             />
-            <Text className="mb-2 text-center capitalize">
+            <Text className="mb-2 text-center text-white capitalize">
               {i18n.t("Please set your body goal and we will calculate your daily calorie need")}
             </Text>
             <SelectInput options={bodyGoals} label="My goal is" name="bodyGoal" />
@@ -44,7 +44,7 @@ const CalorieScreen = () => {
           <>
             <ResultComponent data={calorieNeedByBodyGoal} message="Your daily calorie need for your goal" />
             <SelectInput options={bodyGoals} label="My goal is" name="bodyGoal" />
-            <Text className="mt-1 text-xs">({i18n.t('You need to recalculate if you change your body goal')})</Text>
+            <Text className="mt-1 text-xs text-white">({i18n.t('You need to recalculate if you change your body goal')})</Text>
           </>
         }
       />
