@@ -18,7 +18,7 @@ You can learn your bodytype, your ideal weight according as body type, daily cal
 - `React Navigation`
 - `i18n-js`
 
-[![Bodygoal.tech](https://play-lh.googleusercontent.com/ThkYc_7VrfoSFn8I6ZpXipV4OL1x4JWXFtqwbZv74cVx-g3R4aJ4omKWJLeb72sw4S0=w2560-h1440-rw)](https://play.google.com/store/apps/details?id=com.sinansk.bodygoal&pli=1)
-[![Bodygoal.tech](https://play-lh.googleusercontent.com/2smd_PncwdD-f7rp_TgpCzgirw5rOhU_GxBuoGgKX4Cp4afSvXtk_Kx87S1WlILGDLk3=w2560-h1440-rw)](https://play.google.com/store/apps/details?id=com.sinansk.bodygoal&pli=1)
-[![Bodygoal.tech](https://play-lh.googleusercontent.com/2b-1j7UbQh-w26twSBVfxg-CWIQDAZ6FAqS0pRwmpYBDwq9_IfmTdM01t6WMgJWgITA=w2560-h1440-rw)](https://play.google.com/store/apps/details?id=com.sinansk.bodygoal&pli=1)
-[![Bodygoal.tech](https://play-lh.googleusercontent.com/H-gBxif6jg7Lkx7ZhE5UUdhoimS7TxrwAeh_GImJHbAgmohQelNM_WazzkZOc-icadk=w2560-h1440-rw)](https://play.google.com/store/apps/details?id=com.sinansk.bodygoal&pli=1)
+[![Bodygoal.tech](https://lh3.googleusercontent.com/bXBMFHfguK1QFHbH6sFu2B-pegT2l_sxjF2o-02asVRpxbikukWQgdA6qPNhUui2BZ0H)](https://play.google.com/store/apps/details?id=com.sinansk.bodygoal&pli=1)
+[![Bodygoal.tech](https://lh3.googleusercontent.com/9OXl2rNqPDwcFmkFuoyGZAj9vNqBWjfNY_BwWBlJBF2pT-Bzge_q9gToKQLSp660Tdg)](https://play.google.com/store/apps/details?id=com.sinansk.bodygoal&pli=1)
+[![Bodygoal.tech](https://lh3.googleusercontent.com/iGhPWLjme1R2DLg5izvmcJ16EldpvgXxDnXGlKgXCjXzMYZamizNmotHmPbA7GIocXo)](https://play.google.com/store/apps/details?id=com.sinansk.bodygoal&pli=1)
+[![Bodygoal.tech](https://lh3.googleusercontent.com/fnM2-4COeKIp1Z5C6M7m6ZAs9u3RxCZt75CQp8MZ_It197XPbGpeZ0OzTk1I9_zPoMkZ)](https://play.google.com/store/apps/details?id=com.sinansk.bodygoal&pli=1)
