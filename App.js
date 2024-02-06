@@ -31,17 +31,26 @@ function App() {
         initialRouteName="LandingScreen"
         screenOptions={{
           drawerPosition: "right",
+          drawerActiveTintColor: "#ffffff",
           headerShown: true,
           headerTransparent: true,
           contentStyle: { flex: 1 },
           drawerStyle: {
-            backgroundColor: "#c4b5fd",
-
+            backgroundColor: "#1d4e54",
+            color: "#ffffff",
+            headerTintColor: "#ffffff",
           },
-
+          drawerLabelStyle: {
+            color: "#ffffff",
+            fontSize: 18,
+          },
           headerTitle: true,
-          drawerActiveBackgroundColor: "rgb(125, 211, 252)",
-          drawerActiveTintColor: "#fff",
+          headerTitleStyle: {
+            color: "#ffffff",
+          },
+          drawerActiveBackgroundColor: "#1E313B",
+          drawerActiveTintColor: "#ffffff",
+
 
           headerLeft: () => false,
           headerRight: () => <DrawerToggleButton />,

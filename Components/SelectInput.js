@@ -14,11 +14,11 @@ const SelectInput = (props) => {
 
   return (
     <View className={`-mb-1 flex w-full pr-2 `}>
-      <Text className="-mb-3 font-medium text-slate-800">
+      <Text className="-mb-3 font-medium text-white">
         {i18n.t(props.label)}
       </Text>
       <Picker
-
+        style={{ color: 'white' }}
         selectedValue={selectedValue ? selectedValue : props.options[0].value ?? props.options[0]}
         onValueChange={(itemValue, itemIndex) =>
           dispatch(setInput({ name: props.name, value: itemValue }))
@@ -31,6 +31,7 @@ const SelectInput = (props) => {
               option.status ? i18n.t(option.status) : option.toString()
             }
             value={option.value ?? option}
+            itemStyle={{ color: 'black' }} // options colors
           />
         ))}
       </Picker>

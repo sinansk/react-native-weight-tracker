@@ -16,7 +16,7 @@ const ResultComponent = (props) => {
 
       typeof (props.data) === "object") && (props.name !== "Weight") ? (
       <SafeAreaView style={styles.container}>
-        <Text className="mb-3 text-sm font-bold text-center capitalize text-fuchsia-800">{i18n.t(props.message)}</Text>
+        <Text className="mb-3 text-sm font-bold text-center text-white capitalize">{i18n.t(props.message)}</Text>
         {Object.entries(props.data).map(([key, value]) => (
           <View style={styles.row} key={key}>
             <Text style={styles.key}>{i18n.t(key)}</Text>
@@ -26,8 +26,8 @@ const ResultComponent = (props) => {
       </SafeAreaView>
     ) : (
       <>
-        <Text className="text-base font-bold text-center text-fuchsia-800">{i18n.t(props.message)}</Text>
-        <Text className="mt-5 text-lg font-semibold text-slate-700">{props.data}</Text>
+        <Text className="text-base font-bold text-center text-white">{i18n.t(props.message)}</Text>
+        <Text className="mt-5 text-lg font-semibold text-white">{props.data}</Text>
       </>
     )
 };
@@ -41,14 +41,14 @@ const styles = StyleSheet.create({
     justifyContent: 'center',
     width: "100%",
     height: "100%",
-    marginTop: -20
-
+    marginTop: -20,
+    color: "white",
   },
   row: {
     flex: 1,
     flexDirection: 'row',
     borderBottomWidth: 0.3,
-    borderBottomColor: '#c084fc',
+    borderBottomColor: '#1E313B',
     alignItems: 'center',
     justifyContent: 'space-between',
     width: '100%',
@@ -64,7 +64,7 @@ const styles = StyleSheet.create({
     fontSize: 14,
     textAlign: 'left',
     fontWeight: 'bold',
-    color: '#333',
+    color: 'white',
     flexBasis: '70%',
     textTransform: "capitalize"
 
@@ -73,7 +73,7 @@ const styles = StyleSheet.create({
     fontSize: 14,
     flex: 1,
     textAlign: 'center',
-    color: '#333',
+    color: 'white',
 
   },
 });

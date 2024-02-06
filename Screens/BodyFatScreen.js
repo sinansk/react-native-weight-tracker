@@ -28,7 +28,7 @@ const BodyFatScreen = () => {
       <AnimatedCard color="red"
         cardFrontContent={
           <>
-            <Text className="mb-4 font-semibold capitalize xl:text-2xl">
+            <Text className="mb-4 font-semibold text-white capitalize xl:text-2xl">
               {i18n.t('Measure your body')}!
             </Text>
             {gender === "male" ? (
@@ -47,7 +47,7 @@ const BodyFatScreen = () => {
               />
             )
             }
-            <Text className="text-center">
+            <Text className="text-center text-white">
               {i18n.t('Please measure your neck at widest point, your waist over belly button and your hip over largest point with a tape measure so that we can calculate your body fat ratio')}
             </Text>
           </>

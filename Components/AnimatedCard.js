@@ -68,14 +68,14 @@ const AnimatedCard = (props) => {
     return (
         <View className={"mx-4 mb-2 cursor-pointer flex-col h-60 md:h-96"}>
             <Animated.View style={[styles.card, frontAnimatedStyle]} className={`rounded-xl border-2 p-4  ${props.color === "red"
-                ? `border-fuchsia-400 bg-fuchsia-200/20 text-fuchsia-300`
-                : `border-sky-400 bg-cyan-200/30 text-cyan-300 `
+                ? `border-cyan-300/30 bg-cyan-200/20 text-white`
+                : `text-white border-sky-400/30 bg-sky-500/10 `
                 } `}>
                 {renderFront()}
             </Animated.View>
             <Animated.View style={[styles.card, backAnimatedStyle]} className={` rounded-xl border-2 p-4  ${props.color === "red"
-                ? `border-fuchsia-400 bg-fuchsia-200/20 text-fuchsia-300`
-                : `border-sky-400 bg-cyan-200/30 text-cyan-300 `
+                ? `border-cyan-300/30 bg-cyan-200/20 text-white`
+                : `text-white border-sky-400/30 bg-sky-500/10 `
                 } `}>
                 {renderBack()}
             </Animated.View>
@@ -87,6 +87,7 @@ const styles = StyleSheet.create({
     cardContainer: {
         width: "100%",
         height: 200,
+        color: "white",
     },
     card: {
         position: "absolute",
@@ -95,10 +96,12 @@ const styles = StyleSheet.create({
         justifyContent: "center",
         alignItems: "center",
         backfaceVisibility: "hidden",
-        pointerEvents: "box-none"
+        pointerEvents: "box-none",
+        color: "white",
     },
     contentWrap: {
-        pointerEvents: "none"
+        pointerEvents: "none",
+        color: "white",
     }
 
 });

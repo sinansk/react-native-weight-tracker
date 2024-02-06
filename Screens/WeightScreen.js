@@ -24,23 +24,23 @@ const WeightScreen = () => {
       <AnimatedCard color="red"
         cardFrontContent={
           <>
-            <Text className="mb-3 ml-auto mr-auto font-semibold capitalize xl:text-2xl">{i18n.t('Learn your body type')}!</Text>
+            <Text className="mb-3 ml-auto mr-auto font-semibold text-white capitalize xl:text-2xl">{i18n.t('Learn your body type')}!</Text>
             <Image
               className="w-20 h-20 "
               source={{
                 uri: "https://bodygoal.netlify.app/static/media/washing-hands-female.4ed49ddac7976e562466.png",
               }}
             />
-            <Text className="text-center">
+            <Text className="text-center text-white">
               {i18n.t('Please wrap your thumb and forefinger around your wrist in the area you normally wear a watch')}.
             </Text>
           </>
         }
         cardBackContent={idealWeightRange &&
           <>
-            <Text className="mb-5 font-semibold text-fuchsia-700">{i18n.t("Your body type is {{bodyType}}", { bodyType: i18n.t(bodyType) })}</Text>
+            <Text className="mb-5 font-semibold text-white">{i18n.t("Your body type is {{bodyType}}", { bodyType: i18n.t(bodyType) })}</Text>
             <ResultComponent data={idealWeightRange} name="Weight" message="Your ideal weight range is" />
-            <Text className="mt-5 font-semibold text-fuchsia-700">{idealWeightStatus}</Text>
+            <Text className="mt-5 font-semibold text-white">{idealWeightStatus}</Text>
           </>
         }
       />
