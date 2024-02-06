@@ -7,8 +7,14 @@ const ScreenTemplate = ({ children, headerPadding }) => {
 
   return (
     <LinearGradient
-      colors={["rgb(240, 171, 252)", "rgb(125, 211, 252)"]}
-      style={{ flex: 1, paddingTop: headerHeight ? headerHeight : 0 }}
+      colors={["rgb(29, 78, 84)", "rgb(51, 65, 85)", "rgb(30, 41, 59)"]}
+      start={{ x: 0, y: 0.5 }}
+      end={{ x: 1, y: 0.5 }}
+      style={{
+        flex: 1,
+        paddingTop: headerHeight ? headerHeight : 0,
+        color: "white",
+      }}
     >
       {children}
     </LinearGradient>
