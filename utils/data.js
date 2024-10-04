@@ -109,30 +109,35 @@ export const bodyTypes = [
 export const activityLevels = [
   {
     status: "Sedentary: little or no exercise",
-    value: "level_1",
+    value: "Sedentary: little or no exercise",
+    apiValue: "sedentary",
+    macroValue: 2,
   },
   {
     status: "Exercise 1-3 times/week",
-    value: "level_2",
+    value: "Exercise 1-3 times/week",
+    apiValue: "light",
+    macroValue: 3,
   },
   {
     status: "Exercise 4-5 times/week",
-    value: "level_3",
+    value: "Exercise 4-5 times/week",
+    apiValue: "moderate",
+    macroValue: 4,
   },
   {
     status: "Daily exercise or intense exercise 3-4 times/week",
-    value: "level_4",
+    value: "Daily exercise or intense exercise 3-4 times/week",
+    apiValue: "active",
+    macroValue: 5,
   },
   {
     status: "Intense exercise 6-7 times/week",
-    value: "level_5",
-  },
-  {
-    status: "Very intense exercise daily, or physical job",
-    value: "level_6",
+    value: "Intense exercise 6-7 times/week",
+    apiValue: "veryActive",
+    macroValue: 6,
   },
 ];
-
 export const bodyGoals = [
   {
     status: "Maintain weight",
@@ -175,21 +180,21 @@ export const languageInputs = [
   {
     status: "English",
     value: "en",
-    icon: ""
+    icon: "",
   },
   {
     status: "Turkish",
     value: "tr",
-    icon: ""
+    icon: "",
   },
   {
     status: "German",
     value: "de",
-    icon: ""
+    icon: "",
   },
   {
     status: "Spanish",
     value: "es",
-    icon: ""
+    icon: "",
   },
-]
+];
