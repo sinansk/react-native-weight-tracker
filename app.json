@@ -2,7 +2,7 @@
   "expo": {
     "name": "Bodygoal",
     "slug": "bodygoal",
-    "version": "1.0.6",
+    "version": "1.0.7",
     "orientation": "portrait",
     "icon": "./assets/icon.png",
     "userInterfaceStyle": "light",
@@ -22,7 +22,7 @@
       },
       "usesCleartextTraffic": true,
       "package": "com.sinansk.bodygoal",
-      "versionCode": 7
+      "versionCode": 8
     },
     "web": {
       "favicon": "./assets/favicon.png"
