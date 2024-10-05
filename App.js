@@ -14,20 +14,18 @@ import { Provider, useSelector } from "react-redux";
 import { store } from "./redux/store";
 import i18n from "./locales/i18n";
 import { useEffect } from "react";
-import 'expo-dev-client';
+import "expo-dev-client";
 const Drawer = createDrawerNavigator();
 function App() {
-
-  const { language } = useSelector((state) => state.userInfo)
+  const { language } = useSelector((state) => state.userInfo);
   useEffect(() => {
-    i18n.locale = language
-  }, [language])
+    i18n.locale = language;
+  }, [language]);
 
   return (
     <NavigationContainer>
       <StatusBar translucent={true} backgroundColor={"transparent"} />
       <Drawer.Navigator
-        useLegacyImplementation
         initialRouteName="LandingScreen"
         screenOptions={{
           drawerPosition: "right",
@@ -50,17 +48,31 @@ function App() {
           },
           drawerActiveBackgroundColor: "#1E313B",
           drawerActiveTintColor: "#ffffff",
-
-
           headerLeft: () => false,
-          headerRight: () => <DrawerToggleButton />,
+          headerRight: () => <DrawerToggleButton tintColor="#ffffff" />,
         }}
       >
-        <Drawer.Screen name={i18n.t("Select Gender")} component={LandingScreen} options={{ headerShown: false }} />
-        <Drawer.Screen name={i18n.t("Ideal Weight Calculator")} component={WeightScreen} />
-        <Drawer.Screen name={i18n.t("Body Fat Calculator")} component={BodyFatScreen} />
-        <Drawer.Screen name={i18n.t("Daily Calorie Calculator")} component={CalorieScreen} />
-        <Drawer.Screen name={i18n.t("Ideal Measurements Calculator")} component={MeasurementScreen} />
+        <Drawer.Screen
+          name={i18n.t("Select Gender")}
+          component={LandingScreen}
+          options={{ headerShown: false }}
+        />
+        <Drawer.Screen
+          name={i18n.t("Ideal Weight Calculator")}
+          component={WeightScreen}
+        />
+        <Drawer.Screen
+          name={i18n.t("Body Fat Calculator")}
+          component={BodyFatScreen}
+        />
+        <Drawer.Screen
+          name={i18n.t("Daily Calorie Calculator")}
+          component={CalorieScreen}
+        />
+        <Drawer.Screen
+          name={i18n.t("Ideal Measurements Calculator")}
+          component={MeasurementScreen}
+        />
       </Drawer.Navigator>
     </NavigationContainer>
   );
@@ -72,4 +84,4 @@ export default () => {
       <App />
     </Provider>
   );
-}
+};
