@@ -2,7 +2,7 @@
   "expo": {
     "name": "Bodygoal",
     "slug": "bodygoal",
-    "version": "1.0.7",
+    "version": "1.0.8",
     "orientation": "portrait",
     "icon": "./assets/icon.png",
     "userInterfaceStyle": "light",
@@ -20,12 +20,12 @@
         "foregroundImage": "./assets/adaptive-icon.png",
         "backgroundColor": "#ffffff"
       },
-      "usesCleartextTraffic": true,
       "package": "com.sinansk.bodygoal",
-      "versionCode": 8
+      "versionCode": 9
     },
     "web": {
-      "favicon": "./assets/favicon.png"
+      "favicon": "./assets/favicon.png",
+      "bundler": "metro"
     },
     "plugins": ["expo-localization", "expo-build-properties"],
     "extra": {
@@ -34,8 +34,5 @@
       }
     },
     "owner": "sinansk"
-  },
-  "react-native-google-mobile-ads": {
-    "android_app_id": "ca-app-pub-2458712341743921~1938433825"
   }
 }

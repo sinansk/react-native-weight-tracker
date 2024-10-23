@@ -15,6 +15,7 @@ import { store } from "./redux/store";
 import i18n from "./locales/i18n";
 import { useEffect } from "react";
 import "expo-dev-client";
+import "./global.css";
 const Drawer = createDrawerNavigator();
 function App() {
   const { language } = useSelector((state) => state.userInfo);
