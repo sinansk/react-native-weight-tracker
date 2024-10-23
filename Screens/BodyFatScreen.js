@@ -5,12 +5,11 @@ import SelectInput from "../Components/SelectInput";
 import { waist, neck, hip, ages, heights, weights } from "../utils/data";
 import ButtonPrimary from "../Components/ButtonPrimary";
 import ScreenTemplate from "./ScreenTemplate";
-import { fetchBodyFat } from "../redux/userInfoThunk";
 import { useDispatch, useSelector } from "react-redux";
 import ResultComponent from "../Components/ResultComponent";
 import AnimatedCard from "../Components/AnimatedCard";
 import i18n from "../locales/i18n";
-import BannerAdComponent from "../Components/BannerAdComponent";
+import { setBodyFat } from "../redux/userInfoSlice";
 
 const BodyFatScreen = () => {
   const dispatch = useDispatch();
@@ -70,11 +69,7 @@ const BodyFatScreen = () => {
           <SelectInput options={hip} label="Hip" name="hip" />
         </View>
       </CardComponent>
-      <ButtonPrimary
-        text="Calculate"
-        onPress={() => dispatch(fetchBodyFat())}
-      />
-      <BannerAdComponent />
+      <ButtonPrimary text="Calculate" onPress={() => dispatch(setBodyFat())} />
     </ScreenTemplate>
   );
 };

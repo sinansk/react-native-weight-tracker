@@ -16,7 +16,7 @@ import { fetchMacroNeed } from "../redux/userInfoThunk";
 import ResultComponent from "../Components/ResultComponent";
 import AnimatedCard from "../Components/AnimatedCard";
 import i18n from "../locales/i18n";
-import BannerAdComponent from "../Components/BannerAdComponent";
+import { setMacroNeed } from "../redux/userInfoSlice";
 
 const CalorieScreen = () => {
   const dispatch = useDispatch();
@@ -81,9 +81,8 @@ const CalorieScreen = () => {
       </CardComponent>
       <ButtonPrimary
         text="Calculate"
-        onPress={() => dispatch(fetchMacroNeed())}
+        onPress={() => dispatch(setMacroNeed())}
       />
-      <BannerAdComponent />
     </ScreenTemplate>
   );
 };

@@ -9,9 +9,7 @@ import {
 } from "@expo/vector-icons";
 import { useDispatch, useSelector } from "react-redux";
 import { setGender, setLanguage } from "../redux/userInfoSlice";
-import * as Network from "expo-network";
 import { useRef } from "react";
-import BannerAdComponent from "../Components/BannerAdComponent";
 import LanguageSelectButton from "../Components/LanguageSelectButton";
 
 const LandingScreen = ({ navigation }) => {
@@ -19,40 +17,16 @@ const LandingScreen = ({ navigation }) => {
   const modalRef = useRef(null);
   const dispatch = useDispatch();
   const { gender } = useSelector((state) => state.userInfo);
-  const [network, setNetwork] = useState();
-  const [showNoConnectionMessage, setShowNoConnectionMessage] = useState(false);
-  const checkNetwork = async () => {
-    try {
-      const networkStatus = await Network.getNetworkStateAsync();
-      if (networkStatus.isConnected) {
-        setNetwork(true);
-        setShowNoConnectionMessage(false);
-      } else {
-        setNetwork(false);
-        setShowNoConnectionMessage(true);
-      }
-    } catch (error) {
-      console.log(error);
-    }
-  };
-  useEffect(() => {
-    checkNetwork();
-  }, []);
 
   const handleGender = (selectedGender) => {
     dispatch(setGender(selectedGender));
   };
   const handleNavigate = (nextScreen) => {
-    checkNetwork();
-    network && navigation.navigate(nextScreen);
+    navigation.navigate(nextScreen);
   };
 
   return (
     <View className="flex-col items-center justify-center w-full h-full bg-slate-100">
-      <Text className="mb-10 text-xs font-semibold text-center text-slate-200">
-        {showNoConnectionMessage &&
-          i18n.t("This app requires internet connection")}
-      </Text>
       <View className="absolute top-10 right-2">
         <LanguageSelectButton />
       </View>
@@ -135,7 +109,6 @@ const LandingScreen = ({ navigation }) => {
           </TouchableOpacity>
         </View>
       </View>
-      <BannerAdComponent />
     </View>
   );
 };

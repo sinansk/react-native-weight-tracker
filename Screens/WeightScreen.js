@@ -6,11 +6,10 @@ import { bodyTypes, heights, weights } from "../utils/data";
 import ScreenTemplate from "./ScreenTemplate";
 import ButtonPrimary from "../Components/ButtonPrimary";
 import { useDispatch, useSelector } from "react-redux";
-import { fetchIdealWeight } from "../redux/userInfoThunk";
 import ResultComponent from "../Components/ResultComponent";
 import AnimatedCard from "../Components/AnimatedCard";
 import i18n from "../locales/i18n";
-import BannerAdComponent from "../Components/BannerAdComponent";
+import { setIdealWeight } from "../redux/userInfoSlice";
 
 const WeightScreen = () => {
   const dispatch = useDispatch();
@@ -74,9 +73,8 @@ const WeightScreen = () => {
       </CardComponent>
       <ButtonPrimary
         text="Calculate"
-        onPress={() => dispatch(fetchIdealWeight())}
+        onPress={() => dispatch(setIdealWeight())}
       />
-      <BannerAdComponent />
     </ScreenTemplate>
   );
 };

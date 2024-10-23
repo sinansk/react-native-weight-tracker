@@ -8,6 +8,11 @@ import {
 } from "./userInfoThunk";
 import produce from "immer";
 import i18n from "../locales/i18n";
+import { calculateIdealWeight } from "../utils/calculateIdealWeight";
+import { calculateMacro } from "../utils/calculateMacro";
+import { calculateBodyFat } from "../utils/calculateBodyFat";
+import { convertBodyGoalForMacro } from "../utils/convertBodyGoalStatus";
+import { convertActivityLevel } from "../utils/convertActivityLevel";
 
 const userInfoSlice = createSlice({
   name: "userInfo",
@@ -52,10 +57,54 @@ const userInfoSlice = createSlice({
       state[name] = value;
     },
     setIdealMeasurements: (state) => {
-      state.idealMeasurements = calculateMeasurements(
-        (wrist = state.wrist),
-        (gender = state.gender)
-      );
+      state.idealMeasurements = calculateMeasurements({
+        wrist: state.wrist,
+        gender: state.gender,
+      });
+    },
+    setIdealWeight: (state) => {
+      const idealWeight = calculateIdealWeight({
+        height: state.height,
+        weight: state.weight,
+        gender: state.gender,
+        bodyType: state.bodyType,
+      });
+      state.idealWeightRange = idealWeight.idealWeightRange;
+      state.idealWeightStatus = idealWeight.idealWeightStatus;
+      state.bmi = idealWeight.bmi;
+    },
+    setMacroNeed: (state, action) => {
+      const macroNeed = calculateMacro({
+        height: state.height,
+        weight: state.weight,
+        gender: state.gender,
+        goal: convertBodyGoalForMacro(state.bodyGoal),
+        activityLevel: convertActivityLevel(state.activityLevel),
+        age: state.age,
+      });
+
+      state.macroNeed = macroNeed;
+      state.calorieNeedByBodyGoal = macroNeed.calorieNeedByBodyGoal;
+      state.bmr = macroNeed.bmr;
+    },
+    setBodyFat: (state) => {
+      const bodyFat = calculateBodyFat({
+        neck: state.neck,
+        waist: state.waist,
+        hip: state.hip,
+        weight: state.weight,
+        height: state.height,
+        gender: state.gender,
+        age: state.age,
+      });
+
+      //i18n-js package not translating "." somewhat, so I am deleting it.
+      state.bodyFat = produce(bodyFat, (draftState) => {
+        draftState["Body Fat (US Navy Method)"] =
+          draftState["Body Fat (U.S. Navy Method)"];
+        delete draftState["Body Fat (U.S. Navy Method)"];
+      });
+      state.bodyFatUsNavy = bodyFat["Body Fat (U.S. Navy Method)"];
     },
     setGender: (state, action) => {
       state.gender = action.payload;
@@ -124,7 +173,15 @@ const userInfoSlice = createSlice({
   },
 });
 
-export const { setInput, setIdealMeasurements, setGender, reset, setLanguage } =
-  userInfoSlice.actions;
+export const {
+  setInput,
+  setIdealWeight,
+  setBodyFat,
+  setMacroNeed,
+  setIdealMeasurements,
+  setGender,
+  reset,
+  setLanguage,
+} = userInfoSlice.actions;
 export const userInfoSelector = (state) => state.userInfo;
 export default userInfoSlice.reducer;

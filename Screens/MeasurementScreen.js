@@ -9,8 +9,7 @@ import { useDispatch, useSelector } from "react-redux";
 import ResultComponent from "../Components/ResultComponent";
 import AnimatedCard from "../Components/AnimatedCard";
 import i18n from "../locales/i18n";
-import BannerAdComponent from "../Components/BannerAdComponent";
-import { fetchIdealMeasurements } from "../redux/userInfoThunk";
+import { setIdealMeasurements } from "../redux/userInfoSlice";
 
 const MeasurementScreen = () => {
   const { idealMeasurements } = useSelector((state) => state.userInfo);
@@ -72,9 +71,8 @@ const MeasurementScreen = () => {
       </CardComponent>
       <ButtonPrimary
         text="Calculate"
-        onPress={() => dispatch(fetchIdealMeasurements())}
+        onPress={() => dispatch(setIdealMeasurements())}
       />
-      <BannerAdComponent />
     </ScreenTemplate>
   );
 };
