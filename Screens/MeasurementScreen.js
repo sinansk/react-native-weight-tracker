@@ -28,12 +28,12 @@ const MeasurementScreen = () => {
               {/*i18n-js package not trasnlating if you have "." end of sentence */}
               {i18n.t(
                 "The calculation gives your ideal body measurements, which can be achieved by natural methods"
-              )}{" "}
-              .
+              )}
+              .{" "}
               {i18n.t(
                 "Various studies show that there is a correct correlation between wrist thickness and other body parts"
               )}
-              .
+              .{" "}
               {i18n.t(
                 "If you are doing sports, you can set these measures as the goals you can reach in your ideal weight and body fat ratio"
               )}
