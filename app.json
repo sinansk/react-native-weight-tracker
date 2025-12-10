@@ -2,7 +2,7 @@
   "expo": {
     "name": "Bodygoal",
     "slug": "bodygoal",
-    "version": "1.0.10",
+    "version": "1.0.11",
     "orientation": "portrait",
     "icon": "./assets/icon.png",
     "userInterfaceStyle": "light",
@@ -22,13 +22,25 @@
         "backgroundColor": "#ffffff"
       },
       "package": "com.sinansk.bodygoal",
-      "versionCode": 11
+      "versionCode": 12
     },
     "web": {
       "favicon": "./assets/favicon.png",
       "bundler": "metro"
     },
-    "plugins": ["expo-localization", "expo-build-properties"],
+    "plugins": [
+      "expo-localization",
+      [
+        "expo-build-properties",
+        {
+          "android": {
+            "compileSdkVersion": 35,
+            "targetSdkVersion": 35,
+            "minSdkVersion": 24
+          }
+        }
+      ]
+    ],
     "extra": {
       "eas": {
         "projectId": "7f8d6995-dacb-4468-ae43-014943ad7ba0"
