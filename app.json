@@ -22,7 +22,7 @@
         "backgroundColor": "#ffffff"
       },
       "package": "com.sinansk.bodygoal",
-      "versionCode": 12
+      "versionCode": 14
     },
     "web": {
       "favicon": "./assets/favicon.png",
