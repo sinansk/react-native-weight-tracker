@@ -1,6 +1,5 @@
 import { StyleSheet, Text, View, ActivityIndicator } from "react-native";
 import React from "react";
-import { SafeAreaView } from "react-native-safe-area-context";
 import { useSelector } from "react-redux";
 import i18n from "../locales/i18n";
 
@@ -11,7 +10,7 @@ const ResultComponent = (props) => {
     return <ActivityIndicator size="large" color="#0000ff" />;
   } else
     return typeof props.data === "object" && props.name !== "Weight" ? (
-      <SafeAreaView style={styles.container}>
+      <View style={styles.container}>
         <Text className="mb-3 text-sm font-bold text-center text-white capitalize">
           {i18n.t(props.message)}
         </Text>
@@ -21,7 +20,7 @@ const ResultComponent = (props) => {
             <Text style={styles.value}>{value}</Text>
           </View>
         ))}
-      </SafeAreaView>
+      </View>
     ) : (
       <>
         <Text className="text-base font-bold text-center text-white">

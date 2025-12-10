@@ -1,5 +1,6 @@
 import "react-native-gesture-handler";
 import { StatusBar } from "expo-status-bar";
+import "./global.css";
 import {
   createDrawerNavigator,
   DrawerToggleButton,
@@ -15,7 +16,6 @@ import { store } from "./redux/store";
 import i18n from "./locales/i18n";
 import { useEffect } from "react";
 import "expo-dev-client";
-import "./global.css";
 const Drawer = createDrawerNavigator();
 function App() {
   const { language } = useSelector((state) => state.userInfo);
@@ -27,7 +27,7 @@ function App() {
     <NavigationContainer>
       <StatusBar translucent={true} backgroundColor={"transparent"} />
       <Drawer.Navigator
-        initialRouteName="LandingScreen"
+        initialRouteName={i18n.t("Select Gender")}
         screenOptions={{
           drawerPosition: "right",
           drawerActiveTintColor: "#ffffff",
@@ -49,7 +49,7 @@ function App() {
           },
           drawerActiveBackgroundColor: "#1E313B",
           drawerActiveTintColor: "#ffffff",
-          headerLeft: () => false,
+          headerLeft: () => null,
           headerRight: () => <DrawerToggleButton tintColor="#ffffff" />,
         }}
       >

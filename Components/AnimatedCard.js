@@ -11,38 +11,38 @@ const AnimatedCard = (props) => {
       Animated.timing(flipAnimation, {
         toValue: isFlipped ? 1 : 0,
         duration: 500,
-        useNativeDriver: true,
+        useNativeDriver: false, // rotateY requires useNativeDriver: false on Android
       }).start();
     }
   };
+
   useEffect(() => {
     if (props.cardBackContent) {
       setIsFlipped(true);
       Animated.timing(flipAnimation, {
         toValue: 1,
         duration: 500,
-        useNativeDriver: true,
+        useNativeDriver: false, // rotateY requires useNativeDriver: false on Android
       }).start();
-    } else if (props.cardBackContent === null) {
+    } else {
       setIsFlipped(false);
-      Animated.timing(flipAnimation, {
-        toValue: 0,
-        duration: 0,
-        useNativeDriver: true,
-      }).start();
+      flipAnimation.setValue(0);
     }
   }, [props.cardBackContent]);
+
   const renderFront = () => {
+    if (!props.cardFrontContent) return null;
     return (
-      <TouchableOpacity style={[styles.card]} onPress={flipCard}>
+      <TouchableOpacity style={styles.card} onPress={flipCard} activeOpacity={0.9}>
         {props.cardFrontContent}
       </TouchableOpacity>
     );
   };
 
   const renderBack = () => {
+    if (!props.cardBackContent) return null;
     return (
-      <TouchableOpacity style={[styles.card]} onPress={flipCard}>
+      <TouchableOpacity style={styles.card} onPress={flipCard} activeOpacity={0.9}>
         {props.cardBackContent}
       </TouchableOpacity>
     );
@@ -58,39 +58,44 @@ const AnimatedCard = (props) => {
   });
 
   const frontAnimatedStyle = {
-    transform: [{ rotateY: frontInterpolate }],
+    transform: [{ perspective: 1000 }, { rotateY: frontInterpolate }],
   };
   const backAnimatedStyle = {
-    transform: [{ rotateY: backInterpolate }],
+    transform: [{ perspective: 1000 }, { rotateY: backInterpolate }],
   };
 
   return (
-    <View className={"mx-4 mb-2 cursor-pointer flex-col h-[270px] md:h-96"}>
+    <View style={styles.container} className={"mx-4 mb-2 cursor-pointer flex-col h-[270px] md:h-96"}>
       <Animated.View
         style={[styles.card, frontAnimatedStyle]}
-        className={`rounded-xl border-2 p-4  ${
+        className={`rounded-xl border-2 p-4 ${
           props.color === "red"
             ? `border-cyan-300/30 bg-cyan-200/20 text-white`
-            : `text-white border-sky-400/30 bg-sky-500/10 `
-        } `}
+            : `text-white border-sky-400/30 bg-sky-500/10`
+        }`}
       >
         {renderFront()}
       </Animated.View>
-      <Animated.View
-        style={[styles.card, backAnimatedStyle]}
-        className={` rounded-xl border-2 p-4  ${
-          props.color === "red"
-            ? `border-cyan-300/30 bg-cyan-200/20 text-white`
-            : `text-white border-sky-400/30 bg-sky-500/10 `
-        } `}
-      >
-        {renderBack()}
-      </Animated.View>
+      {props.cardBackContent && (
+        <Animated.View
+          style={[styles.card, backAnimatedStyle]}
+          className={`rounded-xl border-2 p-4 ${
+            props.color === "red"
+              ? `border-cyan-300/30 bg-cyan-200/20 text-white`
+              : `text-white border-sky-400/30 bg-sky-500/10`
+          }`}
+        >
+          {renderBack()}
+        </Animated.View>
+      )}
     </View>
   );
 };
 
 const styles = StyleSheet.create({
+  container: {
+    transform: [{ perspective: 1000 }],
+  },
   cardContainer: {
     width: "100%",
     height: "100%",
@@ -104,7 +109,6 @@ const styles = StyleSheet.create({
     alignItems: "center",
     backfaceVisibility: "hidden",
     pointerEvents: "box-none",
-    color: "white",
   },
   contentWrap: {
     pointerEvents: "none",

@@ -6,7 +6,7 @@ import {
   fetchMacroNeed,
   fetchIdealMeasurements,
 } from "./userInfoThunk";
-import produce from "immer";
+import { produce } from "immer";
 import i18n from "../locales/i18n";
 import { calculateIdealWeight } from "../utils/calculateIdealWeight";
 import { calculateMacro } from "../utils/calculateMacro";
